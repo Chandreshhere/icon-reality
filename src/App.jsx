@@ -10,6 +10,7 @@ import RouteTransition from './components/RouteTransition';
 const HomePage = lazy(() => import('./pages/HomePage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ProjectsPage = lazy(() => import('./pages/ProjectsPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
 
 export default function App() {
   useLenis();
@@ -24,6 +25,7 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<HomePage />} />
           </Routes>
         </Suspense>

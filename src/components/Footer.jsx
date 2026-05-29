@@ -19,35 +19,38 @@ export default function Footer() {
             </Reveal>
           </div>
 
-          <div className="footer__col">
-            <span className="footer__col-title">Menu</span>
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/projects">Projects</Link>
-            <a href="#completed">Completed</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="#contact">Contact</a>
-          </div>
+          <div className="footer__cols-mobile">
+            <div className="footer__col">
+              <span className="footer__col-title">Menu</span>
+              <Link to="/">Home</Link>
+              <Link to="/about">About</Link>
+              <Link to="/projects">Projects</Link>
+              <Link to="/contact">Contact</Link>
+              <a href="#completed">Completed</a>
+              <a href="#testimonials">Testimonials</a>
+            </div>
 
-          <div className="footer__col">
-            <span className="footer__col-title">Contact</span>
-            <a href="mailto:iconrealty2@icloud.com">iconrealty2@icloud.com</a>
-            <a href="tel:+919425942510">+91 9425 9425 10</a>
-            <a href="tel:+919425942511">+91 9425 9425 11</a>
-            <a href="https://instagram.com/iconrealtyofficial" rel="noreferrer" target="_blank">Instagram</a>
-            <a href="https://youtube.com/@IconRealtyOfficial" rel="noreferrer" target="_blank">YouTube</a>
-            <a href="https://facebook.com/IconRealtyOfficial" rel="noreferrer" target="_blank">Facebook</a>
-            <p className="footer__address">
-              Icon Realty<br/>
-              Indore, Madhya Pradesh – 452001<br/>
-              Site visits by appointment
-            </p>
+            <div className="footer__col">
+              <span className="footer__col-title">Contact</span>
+              <a href="mailto:iconrealty2@icloud.com">iconrealty2@icloud.com</a>
+              <a href="tel:+919425942510">+91 9425 9425 10</a>
+              <a href="tel:+919425942511">+91 9425 9425 11</a>
+              <a href="https://instagram.com/iconrealtyofficial" rel="noreferrer" target="_blank">Instagram</a>
+              <a href="https://youtube.com/@IconRealtyOfficial" rel="noreferrer" target="_blank">YouTube</a>
+              <a href="https://facebook.com/IconRealtyOfficial" rel="noreferrer" target="_blank">Facebook</a>
+              <p className="footer__address">
+                Icon Realty<br/>
+                Indore, Madhya Pradesh – 452001<br/>
+                Site visits by appointment
+              </p>
+            </div>
           </div>
         </div>
 
         <div className="footer__bottom">
-          <span>© {new Date().getFullYear()} Icon Realty. All rights reserved.</span>
-          <span>Crafting premium addresses in Indore</span>
+          <span className="footer__bottom-desktop">© {new Date().getFullYear()} Icon Realty. All rights reserved.</span>
+          <span className="footer__bottom-desktop">Crafting premium addresses in Indore</span>
+          <span className="footer__bottom-mobile">Icon Realty · Indore, Madhya Pradesh – 452001</span>
         </div>
       </div>
 

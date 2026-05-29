@@ -35,7 +35,7 @@
   font-size: clamp(38px, 5.4vw, 76px);
   letter-spacing: -0.02em;
   text-transform: none;
-  font-weight: 700;
+  font-weight: 600;
   color: #F4F0EA;
   margin-bottom: 24px;
 }
@@ -224,7 +224,7 @@
 
 .service-modal__title {
   font-size: clamp(26px, 3vw, 42px);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--ink);
   margin: 0;
@@ -308,8 +308,11 @@
   .service-modal__carousel-wrap { padding-top: 64px; }
   .service-modal__carousel { height: 36vh; }
   .service-modal__slide { width: 70%; }
+  /* much faster marquee on mobile — slides take up more relative width
+     so the desktop 32s pace feels sluggish */
+  .service-modal__track { animation-duration: 14s; }
   .service-modal__stat-row { grid-template-columns: repeat(2, 1fr); }
-  .service-modal__body { padding: 16px 18px 24px; }
+  .service-modal__body { padding: 22px 20px 26px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -342,4 +345,16 @@
   .services__thumb { width: 90px; }
   .services__row-body { padding-left: 0; }
   .services__bars { display: none; }
+}
+
+@media (max-width: 720px) {
+  .services { padding: 8px; }
+  .services__shell { border-radius: 14px; padding: 60px 0; }
+  .services__title { font-size: clamp(30px, 9vw, 48px); padding-inline: 12px; }
+  .services__lede { font-size: 15px; padding-inline: 12px; }
+  /* breathing room inside each row so the + button never flushes the edge */
+  .services__row { gap: 14px; padding: 16px 12px; }
+  .services__thumb { width: 70px; }
+  .services__row-title { font-size: 18px; letter-spacing: 0.03em; }
+  .services__row-plus { width: 36px; height: 36px; }
 }

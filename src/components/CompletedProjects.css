@@ -21,7 +21,7 @@
   font-size: clamp(38px, 5.4vw, 76px);
   letter-spacing: -0.02em;
   text-transform: none;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.02;
   margin-bottom: 24px;
 }
@@ -102,8 +102,16 @@
   .completed__grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 720px) {
-  .completed__grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 420px) {
-  .completed__grid { grid-template-columns: 1fr; }
+  .completed { padding: 50px 0; }
+  .completed__head { margin-bottom: 28px; }
+  .completed__title { font-size: clamp(28px, 8vw, 42px); margin-bottom: 14px; padding-inline: 12px; }
+  .completed__lede { font-size: 15px; padding: 0 12px; }
+  /* 2-col grid all the way down on mobile — keeps 8 cards compact, no long scroll */
+  .completed__grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .completed__card { gap: 8px; }
+  .completed__media { aspect-ratio: 1 / 1; border-radius: 6px; }
+  .completed__badge { top: 8px; left: 8px; padding: 4px 8px; font-size: 9px; letter-spacing: 0.16em; }
+  .completed__body { padding: 0 2px; }
+  .completed__name { font-size: 14px; }
+  .completed__location { font-size: 11px; letter-spacing: 0.04em; }
 }

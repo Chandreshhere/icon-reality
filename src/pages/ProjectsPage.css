@@ -11,7 +11,7 @@
 
 .projects-hero__title {
   font-size: clamp(48px, 9vw, 140px);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 0.96;
   letter-spacing: -0.025em;
   text-transform: uppercase;
@@ -61,7 +61,7 @@
 
 .projects-list__title {
   font-size: clamp(36px, 4.6vw, 64px);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.02em;
   text-transform: none;
   line-height: 1.02;
@@ -144,7 +144,14 @@
   .projects-list__grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 720px) {
-  .projects-list__grid { grid-template-columns: repeat(2, 1fr); }
+  .projects-hero { padding: 110px 0 40px; }
+  .projects-hero__title { font-size: clamp(42px, 12vw, 70px); padding-inline: 12px; }
+  .projects-hero__lede { font-size: 15px; padding: 0 12px; }
+  .projects-list { padding: 60px 0; }
+  .projects-list__head { margin-bottom: 32px; }
+  .projects-list__title { font-size: clamp(28px, 8vw, 42px); padding-inline: 12px; }
+  .projects-list__grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .projects-list__name { font-size: 16px; }
 }
 @media (max-width: 420px) {
   .projects-list__grid { grid-template-columns: 1fr; }

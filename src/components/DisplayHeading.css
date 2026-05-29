@@ -5,11 +5,7 @@
   overflow: hidden;
 }
 
-/* hide default cursor only on devices with fine pointer */
-@media (hover: hover) and (pointer: fine) {
-  .display-section,
-  .display-section * { cursor: none; }
-}
+/* default cursor stays — the trail itself communicates the interactivity */
 
 .display-section__inner {
   position: relative;
@@ -23,7 +19,7 @@
   font-size: clamp(40px, 6.4vw, 96px);
   letter-spacing: -0.015em;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.05;
   margin: 0 auto 36px;
   max-width: 18ch;
@@ -70,29 +66,99 @@
   pointer-events: none;
 }
 
-/* custom cursor */
-.display-section__cursor {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 92px;
-  height: 92px;
-  background: var(--peach);
-  color: var(--ink);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  letter-spacing: 0.22em;
-  font-weight: 600;
-  pointer-events: none;
-  z-index: 50;
-  will-change: transform;
-  user-select: none;
-}
-
 @media (max-width: 720px) {
-  .display-section__pool { display: none; }
-  .display-section__cursor { display: none; }
+  /* MOBILE: tight scattered photo collage. No rotation, compact spacing.
+     3 rows (top L/C/R, mid L/R flank heading, bottom L/C/R) with 8 photos. */
+  .display-section {
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    height: 720px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .display-section__inner {
+    position: relative;
+    z-index: 4;
+    width: 200px;
+    max-width: 62vw;
+    text-align: center;
+    padding: 0;
+  }
+  .display-section__heading {
+    font-size: clamp(21px, 6vw, 28px);
+    line-height: 1.06;
+  }
+  .display-section__lede {
+    font-size: 13px;
+    line-height: 1.55;
+    margin: 12px auto 0;
+    padding: 0;
+    color: var(--muted);
+  }
+
+  .display-section__pool {
+    display: block;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .display-section__trail-img {
+    opacity: 1;
+    position: absolute;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 22px -12px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+    pointer-events: none;
+  }
+
+  /* ===== TOP ROW — left / center / right ===== */
+  .display-section__trail-img:nth-child(1) {       /* TOP-LEFT */
+    top: 16px; left: 6px;
+    width: 92px; height: 125px;
+  }
+  .display-section__trail-img:nth-child(2) {       /* TOP-CENTER — tall */
+    top: 6px; left: 50%;
+    width: 108px; height: 160px;
+    transform: translateX(-50%);
+  }
+  .display-section__trail-img:nth-child(3) {       /* TOP-RIGHT */
+    top: 28px; right: 6px;
+    width: 100px; height: 132px;
+  }
+
+  /* ===== MIDDLE ROW — flank the centered text ===== */
+  .display-section__trail-img:nth-child(4) {       /* MID-LEFT */
+    top: 290px; left: -14px;
+    width: 80px; height: 140px;
+  }
+  .display-section__trail-img:nth-child(5) {       /* MID-RIGHT */
+    top: 310px; right: -10px;
+    width: 76px; height: 130px;
+  }
+
+  /* ===== BOTTOM ROW — left / center / right ===== */
+  .display-section__trail-img:nth-child(6) {       /* BOTTOM-LEFT */
+    bottom: 16px; left: 6px;
+    width: 90px; height: 122px;
+  }
+  .display-section__trail-img:nth-child(7) {       /* BOTTOM-CENTER — biggest */
+    bottom: 6px; left: 50%;
+    width: 112px; height: 162px;
+    transform: translateX(-50%);
+  }
+  .display-section__trail-img:nth-child(8) {       /* BOTTOM-RIGHT */
+    bottom: 28px; right: 6px;
+    width: 96px; height: 134px;
+  }
+
+  .display-section__trail-img:nth-child(9),
+  .display-section__trail-img:nth-child(10) { display: none; }
 }

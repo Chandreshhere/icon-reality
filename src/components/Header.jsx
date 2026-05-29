@@ -23,6 +23,7 @@ export default function Header() {
         <nav className="site-header__nav">
           <Link to="/about">About</Link>
           <Link to="/projects">Projects</Link>
+          <Link to="/contact">Contact</Link>
         </nav>
 
         <Link to="/" className="site-header__brand" aria-label="Icon Realty home">
@@ -52,8 +53,8 @@ export default function Header() {
               <Link to="/">Home</Link>
               <Link to="/about">About</Link>
               <Link to="/projects">Projects</Link>
+              <Link to="/contact">Contact</Link>
               <a href="#testimonials">Testimonials</a>
-              <a href="#contact">Contact</a>
             </nav>
           </div>
 

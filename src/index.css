@@ -51,6 +51,17 @@ main {
   min-height: 100vh;
 }
 
+/* Mobile: tighten the global container gutter so unframed sections (Pillars,
+   Stats, Trust, ForBuyers, CompletedProjects, DisplayHeading) line up with
+   the 8px outer padding used by every framed section (Hero, Services,
+   ProjectsCarousel, Testimonials, FinalCTA, About-team, About-video).
+   All section edges sit 8px from the viewport edge on mobile. */
+@media (max-width: 720px) {
+  :root {
+    --gutter: 8px;
+  }
+}
+
 /* lenis */
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
@@ -68,7 +79,7 @@ html.lenis, html.lenis body { height: auto; }
 
 .display {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.02;
   letter-spacing: -0.01em;
   text-transform: uppercase;

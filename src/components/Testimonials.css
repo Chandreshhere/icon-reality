@@ -27,7 +27,7 @@
   font-size: clamp(38px, 5.4vw, 76px);
   letter-spacing: -0.02em;
   text-transform: none;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.02;
 }
 
@@ -139,6 +139,13 @@
 
 @media (max-width: 720px) {
   .testimonials { padding: 8px; }
-  .testimonials__shell { border-radius: 14px; padding: 50px 0 36px; }
-  .testimonial { padding: 28px 22px; }
+  .testimonials__shell { border-radius: 14px; padding: 50px 0 32px; }
+  .testimonials__head { margin-bottom: 32px; }
+  .testimonials__title { font-size: clamp(28px, 8vw, 42px); padding-inline: 12px; }
+  .testimonials__viewport { padding: 14px 0 36px; height: clamp(380px, 56vh, 460px); }
+  .testimonial { padding: 26px 22px; gap: 16px; width: min(560px, 90vw); margin-left: calc(min(560px, 90vw) / -2); }
+  .testimonial__quote { font-size: 15px; padding-inline: 12px; }
+  .testimonial__name { font-size: 15px; }
+  .testimonials__counter-sep { width: 24px; }
+  .testimonials__buttons button { width: 48px; height: 48px; }
 }

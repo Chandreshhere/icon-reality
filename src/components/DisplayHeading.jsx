@@ -21,7 +21,6 @@ const SPAWN_DISTANCE = 90; // px of mouse movement before spawning next image
 
 export default function DisplayHeading() {
   const sectionRef = useRef(null);
-  const cursorRef = useRef(null);
   const trailRefs = useRef([]);
   const trailIdxRef = useRef(0);
   const lastPosRef = useRef({ x: 0, y: 0 });
@@ -30,13 +29,13 @@ export default function DisplayHeading() {
 
   useEffect(() => {
     const section = sectionRef.current;
-    const cursor = cursorRef.current;
-    if (!section || !cursor) return;
+    if (!section) return;
 
+    // Skip the hover trail on touch devices AND narrow viewports — mobile
+    // uses a static scattered photo collage controlled by CSS instead.
     const isCoarse = window.matchMedia('(pointer: coarse)').matches;
-    if (isCoarse) return; // no hover effect on touch devices
-
-    gsap.set(cursor, { xPercent: -50, yPercent: -50, scale: 0, opacity: 0 });
+    const isNarrow = window.matchMedia('(max-width: 720px)').matches;
+    if (isCoarse || isNarrow) return;
 
     let zCounter = 1;
 
@@ -45,7 +44,7 @@ export default function DisplayHeading() {
       if (!img) return;
       trailIdxRef.current = (trailIdxRef.current + 1) % trailRefs.current.length;
 
-      const rot = (Math.random() - 0.5) * 14; // -7 to +7 deg
+      const rot = (Math.random() - 0.5) * 14;
       const offX = (Math.random() - 0.5) * 40;
       const offY = (Math.random() - 0.5) * 30;
 
@@ -66,22 +65,25 @@ export default function DisplayHeading() {
         .to(img, { scale: 0.3, opacity: 0, duration: 0.32, ease: 'power2.in' }, '+=0.4');
     };
 
-    const onEnter = () => {
+    // first time the pointer enters the section → immediately spawn a card
+    // at the cursor so the user sees the feature exists.
+    const onEnter = (e) => {
       insideRef.current = true;
-      gsap.to(cursor, { scale: 1, opacity: 1, duration: 0.25, ease: 'power3.out' });
+      const rect = section.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      spawn(x, y);
+      lastPosRef.current = { x, y };
     };
 
     const onLeave = () => {
       insideRef.current = false;
-      gsap.to(cursor, { scale: 0, opacity: 0, duration: 0.2, ease: 'power3.in' });
     };
 
     const onMove = (e) => {
       const rect = section.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-
-      gsap.to(cursor, { x, y, duration: 0.35, ease: 'power3.out', overwrite: 'auto' });
 
       const dx = x - lastPosRef.current.x;
       const dy = y - lastPosRef.current.y;
@@ -135,7 +137,6 @@ export default function DisplayHeading() {
             src={src}
             alt=""
             className="display-section__trail-img"
-            loading="lazy"
           />
         ))}
       </div>
@@ -160,9 +161,6 @@ export default function DisplayHeading() {
         </Reveal>
       </div>
 
-      <div ref={cursorRef} className="display-section__cursor" aria-hidden>
-        <span>EXPLORE</span>
-      </div>
     </section>
   );
 }

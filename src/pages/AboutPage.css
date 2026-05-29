@@ -12,7 +12,7 @@
 
 .about-hero__title {
   font-size: clamp(56px, 11vw, 180px);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 0.95;
   letter-spacing: -0.025em;
   text-transform: uppercase;
@@ -134,7 +134,7 @@
 
 .about-story__heading {
   font-size: clamp(38px, 5vw, 72px);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.02;
   letter-spacing: -0.02em;
   text-transform: none;
@@ -271,7 +271,7 @@
 
 .about-team__heading {
   font-size: clamp(40px, 5.6vw, 84px);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.02;
   letter-spacing: -0.02em;
   text-transform: uppercase;
@@ -406,5 +406,37 @@
 
 @media (max-width: 720px) {
   .about-team { padding: 8px; }
-  .about-team__shell { border-radius: 14px; }
+  .about-team__shell { border-radius: 14px; padding: 60px 0 36px; }
+  .about-team__heading { font-size: clamp(34px, 9vw, 50px); padding-inline: 12px; }
+  .about-team__lede { padding-inline: 12px; }
+  /* stack the 2 director cards vertically on small screens */
+  .about-team__cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 110px;
+    margin-top: 80px;
+  }
+  .team-card { width: 100%; max-width: 320px; }
+  .team-card__photo { width: 170px; height: 220px; margin-left: -85px; top: -60px; }
+
+  /* tighten about hero text */
+  .about-hero { padding: 110px 0 50px; }
+  .about-hero__title { font-size: clamp(44px, 13vw, 78px); padding-inline: 12px; }
+  .about-hero__lede { font-size: 15px; padding: 0 12px; }
+
+  /* shorter video scrub */
+  .about-video { height: 220vh; }
+  .about-video__sticky { padding: 8px; }
+  .about-video__shell { border-radius: 14px; }
+
+  .about-story { padding: 60px 0; }
+  .about-story__heading { font-size: clamp(28px, 8vw, 40px); padding-inline: 12px; }
+  .about-story__copy { font-size: 15px; padding-inline: 12px; }
+
+  .about-vm { padding: 0 0 60px; }
+  /* card-style internal padding to match pillars / testimonials */
+  .about-vm__card { padding: 28px 22px; }
+  .about-vm__value { padding: 22px 20px; }
+  .about-vm__card p { font-size: 15px; }
+  .about-vm__values-title { font-size: 22px; margin-bottom: 22px; }
 }

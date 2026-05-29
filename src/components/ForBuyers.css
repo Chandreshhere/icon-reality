@@ -14,7 +14,7 @@
   font-size: clamp(40px, 5.6vw, 84px);
   letter-spacing: -0.02em;
   text-transform: none;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 28px;
 }
 
@@ -38,4 +38,10 @@
 
 @media (max-width: 880px) {
   .forbuyers__grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .forbuyers { padding: 60px 0; }
+  .forbuyers__heading { font-size: clamp(30px, 8.5vw, 44px); margin-bottom: 22px; padding-inline: 12px; }
+  .forbuyers__lede { font-size: 15px; padding-inline: 12px; }
 }

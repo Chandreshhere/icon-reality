@@ -31,7 +31,7 @@
   font-size: clamp(38px, 5.4vw, 76px);
   letter-spacing: -0.02em;
   text-transform: none;
-  font-weight: 700;
+  font-weight: 600;
   color: #F4F0EA;
   margin-bottom: 24px;
 }
@@ -186,14 +186,25 @@
 
 @media (max-width: 720px) {
   .carousel { padding: 8px; }
-  .carousel__shell { border-radius: 14px; padding: 60px 0 36px; }
+  .carousel__shell { border-radius: 14px; padding: 60px 0 32px; }
+  .carousel__head { margin-bottom: 32px; }
+  .carousel__title { font-size: clamp(30px, 8vw, 44px); padding-inline: 12px; }
+  .carousel__lede { font-size: 15px; padding: 0 12px; }
+  /* Mobile: hide non-active slivers, show only the active card centered */
   .carousel__accordion {
-    height: 70vh;
-    padding: 0 12px;
-    gap: 6px;
+    height: clamp(440px, 64vh, 580px);
+    padding: 0 14px;
+    gap: 0;
   }
-  .carousel__card { width: 100px; }
-  .carousel__card.is-active { width: clamp(240px, 50vh, 380px); }
-  .carousel__card-label { font-size: 20px; }
+  .carousel__card { display: none; }
+  .carousel__card.is-active {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+  }
+  .carousel__card-label { font-size: 22px; }
   .carousel__card-meta { font-size: 11px; }
+  .carousel__card-caption { left: 22px; bottom: 22px; }
+  .carousel__controls { padding: 0 20px; }
+  .carousel__buttons button { width: 48px; height: 48px; }
 }

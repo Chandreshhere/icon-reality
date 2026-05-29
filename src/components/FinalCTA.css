@@ -32,7 +32,7 @@
 
 .final-cta__title {
   font-size: clamp(30px, 4vw, 56px);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.04;
   letter-spacing: -0.02em;
   text-transform: none;
@@ -114,7 +114,9 @@
 
 @media (max-width: 720px) {
   .final-cta { padding: 8px; }
-  .final-cta__shell { border-radius: 14px; padding: 40px 20px; }
+  .final-cta__shell { border-radius: 14px; padding: 44px 22px; }
+  .final-cta__title { font-size: clamp(26px, 8vw, 36px); padding-inline: 12px; }
+  .final-cta__lede { font-size: 15px; padding-inline: 12px; }
   .final-cta__actions { flex-direction: column; width: 100%; }
   .final-cta__primary, .final-cta__secondary { width: 100%; }
   .final-cta__foot { flex-direction: column; gap: 6px; text-align: center; }

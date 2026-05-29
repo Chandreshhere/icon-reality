@@ -35,6 +35,10 @@
   margin-bottom: 30px;
 }
 
+.footer__cols-mobile {
+  display: contents;
+}
+
 .footer__col {
   display: flex;
   flex-direction: column;
@@ -70,7 +74,7 @@
   gap: clamp(20px, 3vw, 40px);
   margin: clamp(30px, 5vw, 60px) 0 clamp(20px, 3vw, 36px);
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 0.85;
   letter-spacing: -0.02em;
   z-index: 2;
@@ -100,6 +104,10 @@
   z-index: 2;
 }
 
+/* desktop: hide the mobile-only address; mobile rule below flips this */
+.footer__bottom-mobile { display: none; }
+.footer__bottom-desktop { display: inline; }
+
 .footer__bars {
   position: absolute;
   right: -10px;
@@ -123,4 +131,65 @@
   .footer__grid { grid-template-columns: 1fr; gap: 40px; }
   .footer__wordmark { flex-direction: column; gap: 0; }
   .footer__wordmark-bars, .footer__wordmark-text { font-size: clamp(48px, 18vw, 100px); }
+}
+
+@media (max-width: 720px) {
+  .footer { padding: 40px 0 24px; }
+  /* MOBILE layout: lead block centered on top, then menu/contact as a 2-col row below */
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-bottom: 28px;
+    padding-inline: 12px; /* match the 12px text-padding rhythm used site-wide on mobile */
+  }
+  .footer__lead {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer__logo { width: 140px; margin-bottom: 16px; }
+  .footer__pitch {
+    font-size: 14px;
+    line-height: 1.45;
+    margin: 0 auto 14px;
+    max-width: 30ch;
+  }
+  /* Menu (left) + Contact (right) — 2-col row underneath the centered lead */
+  .footer__cols-mobile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(244, 240, 234, 0.10);
+  }
+  .footer__col { gap: 10px; }
+  /* right-side column (Contact) — align all text to the right */
+  .footer__cols-mobile .footer__col:nth-child(2) {
+    align-items: flex-end;
+    text-align: right;
+  }
+  .footer__col-title { font-size: 12px; margin-bottom: 2px; }
+  .footer__col a { font-size: 14px; }
+  /* the verbose address in the contact column belongs to desktop only on mobile;
+     the simplified one-liner address is shown centered in the bottom bar instead */
+  .footer__address { display: none; }
+  /* bottom bar: address + © + tagline, all stacked centered on mobile */
+  .footer__bottom {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+    align-items: center;
+    padding-top: 22px;
+    padding-inline: 12px;
+  }
+  .footer__bottom-mobile {
+    display: inline;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: rgba(244, 240, 234, 0.75);
+    margin-bottom: 4px;
+  }
+  .footer__bottom-desktop { display: inline; }
+  .footer__bars { display: none; }
 }

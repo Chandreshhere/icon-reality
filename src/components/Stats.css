@@ -19,7 +19,7 @@
   font-size: clamp(30px, 4vw, 56px);
   letter-spacing: -0.02em;
   text-transform: none;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.04;
   margin-bottom: 18px;
 }
@@ -60,7 +60,7 @@
 .stats__value {
   font-family: var(--font-display);
   font-size: clamp(28px, 3.4vw, 48px);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1;
   color: var(--ink);
@@ -81,6 +81,14 @@
 
 @media (max-width: 880px) {
   .stats__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 720px) {
+  .stats { padding: 60px 0; }
+  .stats__heading { font-size: clamp(26px, 8vw, 38px); padding-inline: 12px; }
+  .stats__lede { font-size: 15px; padding: 0 12px; }
+  /* card-style internal padding to match pillars + testimonials cards */
+  .stats__card { padding: 22px 20px; gap: 8px; }
+  .stats__value { font-size: clamp(28px, 9vw, 40px); }
 }
 @media (max-width: 480px) {
   .stats__grid { grid-template-columns: 1fr; }

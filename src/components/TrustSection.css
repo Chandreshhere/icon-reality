@@ -25,7 +25,7 @@
 
 .trust__heading {
   font-size: clamp(34px, 4.4vw, 64px);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.02;
   margin-bottom: 28px;
   text-transform: none;
@@ -58,4 +58,11 @@
 @media (max-width: 880px) {
   .trust__grid { grid-template-columns: 1fr; }
   .trust__image-wrap { aspect-ratio: 4/5; max-height: 70vh; }
+}
+
+@media (max-width: 720px) {
+  .trust { padding: 60px 0; }
+  .trust__heading { font-size: clamp(28px, 8vw, 40px); margin-bottom: 20px; padding-inline: 12px; }
+  .trust__lede { font-size: 15px; margin-bottom: 26px; padding-inline: 12px; }
+  .trust__points li { font-size: 15px; padding: 16px 0; }
 }

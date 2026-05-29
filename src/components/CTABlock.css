@@ -18,7 +18,7 @@
   font-size: clamp(38px, 5vw, 76px);
   letter-spacing: -0.02em;
   text-transform: none;
-  font-weight: 700;
+  font-weight: 600;
   z-index: 2;
 }
 
