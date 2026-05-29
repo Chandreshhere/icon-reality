@@ -1,0 +1,41 @@
+.forbuyers {
+  padding: clamp(80px, 12vw, 160px) 0;
+  background: var(--bg);
+}
+
+.forbuyers__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: clamp(40px, 7vw, 110px);
+  align-items: center;
+}
+
+.forbuyers__heading {
+  font-size: clamp(40px, 5.6vw, 84px);
+  letter-spacing: -0.02em;
+  text-transform: none;
+  font-weight: 700;
+  margin-bottom: 28px;
+}
+
+.forbuyers__lede {
+  font-size: clamp(19px, 1.55vw, 24px);
+  color: var(--muted);
+  max-width: 48ch;
+  line-height: 1.55;
+}
+
+.forbuyers__image {
+  border-radius: 6px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+.forbuyers__image img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 1.4s cubic-bezier(0.2,0.8,0.2,1);
+}
+.forbuyers__image:hover img { transform: scale(1.05); }
+
+@media (max-width: 880px) {
+  .forbuyers__grid { grid-template-columns: 1fr; }
+}

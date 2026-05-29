@@ -1,0 +1,151 @@
+.projects-hero {
+  padding: clamp(140px, 18vw, 240px) 0 clamp(50px, 6vw, 90px);
+  background: var(--bg);
+}
+
+.projects-hero__inner {
+  text-align: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.projects-hero__title {
+  font-size: clamp(48px, 9vw, 140px);
+  font-weight: 700;
+  line-height: 0.96;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 auto clamp(28px, 3vw, 44px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-display);
+}
+.projects-hero__line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+}
+.projects-hero__line-inner {
+  display: block;
+  will-change: transform;
+}
+
+.projects-hero__lede {
+  font-size: clamp(17px, 1.35vw, 22px);
+  color: var(--muted);
+  max-width: 56ch;
+  line-height: 1.55;
+  margin: 0 auto;
+}
+
+/* TRENDING LIST */
+.projects-list {
+  padding: clamp(80px, 12vw, 160px) 0;
+  background: var(--bg);
+}
+
+.projects-list__head {
+  text-align: center;
+  margin-bottom: clamp(40px, 5vw, 70px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projects-list__eyebrow {
+  color: var(--peach-deep);
+  margin-bottom: 14px;
+}
+
+.projects-list__title {
+  font-size: clamp(36px, 4.6vw, 64px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  line-height: 1.02;
+}
+
+.projects-list__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 1.8vw, 28px);
+}
+
+.projects-list__card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform .35s ease;
+}
+.projects-list__card:hover { transform: translateY(-4px); }
+
+.projects-list__media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg-2);
+}
+.projects-list__media img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.projects-list__card:hover .projects-list__media img { transform: scale(1.06); }
+
+.projects-list__badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: var(--peach);
+  color: #1A1A1A;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+
+.projects-list__body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0 4px;
+}
+
+.projects-list__name {
+  font-family: var(--font-display);
+  font-size: clamp(17px, 1.4vw, 22px);
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+
+.projects-list__meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.projects-list__dot { opacity: .5; }
+
+.projects-list__plots {
+  font-size: 13px;
+  color: var(--ink-soft);
+  opacity: 0.75;
+  margin-top: 4px;
+}
+
+@media (max-width: 980px) {
+  .projects-list__grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 720px) {
+  .projects-list__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 420px) {
+  .projects-list__grid { grid-template-columns: 1fr; }
+}

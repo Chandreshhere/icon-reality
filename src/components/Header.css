@@ -1,0 +1,185 @@
+.site-header {
+  position: fixed;
+  top: 28px;
+  left: 14px;
+  right: 14px;
+  z-index: 100;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+}
+
+.site-header__inner {
+  pointer-events: auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 880px;
+  padding: 12px 20px;
+  border-radius: 14px;
+  background: rgba(120, 116, 110, 0.5);
+  backdrop-filter: saturate(160%) blur(14px);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  color: #fff;
+  transition:
+    max-width .55s cubic-bezier(0.4, 0, 0.2, 1),
+    padding .45s cubic-bezier(0.4, 0, 0.2, 1),
+    background .35s ease;
+}
+.site-header.is-scrolled .site-header__inner {
+  max-width: 1100px;
+  padding: 13px 22px;
+  background: rgba(28, 28, 28, 0.72);
+}
+
+.site-header__nav {
+  display: flex;
+  gap: 28px;
+  font-size: 15px;
+  font-weight: 400;
+  padding-left: 8px;
+}
+.site-header__nav a {
+  position: relative;
+  opacity: .92;
+}
+.site-header__nav a:hover { opacity: 1; }
+.site-header__nav a::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -6px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .35s ease;
+}
+.site-header__nav a:hover::after { transform: scaleX(1); }
+
+.site-header__brand {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+}
+.site-header__logo {
+  height: 110px;
+  width: auto;
+  display: block;
+  margin: -33px 0;
+  transition: opacity .25s ease;
+}
+.site-header__brand:hover .site-header__logo { opacity: 0.85; }
+
+.site-header__actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 14px;
+}
+.site-header__actions .cta { height: 44px; padding: 0 22px; font-size: 14px; }
+
+.hamburger {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  transition: background .2s ease;
+}
+.hamburger:hover { background: rgba(255,255,255,0.18); }
+.hamburger span {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: #fff;
+  transition: transform .3s ease, opacity .3s ease;
+}
+.hamburger.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hamburger.is-open span:nth-child(2) { opacity: 0; }
+.hamburger.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.site-header__sheet {
+  pointer-events: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: min(360px, 90vw);
+  background: #1A1A1A;
+  color: #fff;
+  border-radius: 14px;
+  padding: 28px 28px 24px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+.site-header__sheet.is-open {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0);
+}
+.site-header__sheet nav {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 22px;
+  font-family: var(--font-display);
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.site-header__sheet nav a { opacity: .85; transition: opacity .2s ease, transform .2s ease; }
+.site-header__sheet nav a:hover { opacity: 1; transform: translateX(4px); color: var(--peach); }
+.site-header__sheet > a {
+  font-size: 14px;
+  color: var(--peach);
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: 16px;
+  display: block;
+}
+
+/* award chip on right edge */
+.header-award {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  background: #141414;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  height: 180px;
+  z-index: 95;
+}
+.header-award__w {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.04em;
+}
+.header-award__label {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.8);
+}
+
+@media (max-width: 860px) {
+  .site-header__nav { display: none; }
+  .site-header__inner { grid-template-columns: auto 1fr auto; }
+  .site-header__brand { font-size: 18px; }
+  .brand-mark { font-size: 22px; }
+  .site-header__actions .cta { display: none; }
+  .header-award { display: none; }
+}
