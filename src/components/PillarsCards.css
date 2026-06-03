@@ -1,5 +1,5 @@
 .pillars {
-  padding: clamp(80px, 12vw, 160px) 0;
+  padding: clamp(60px, 8vw, 100px) 0;
   background: var(--bg);
 }
 
@@ -9,7 +9,7 @@
   text-transform: none;
   font-weight: 600;
   text-align: center;
-  margin-bottom: clamp(60px, 8vw, 100px);
+  margin-bottom: clamp(48px, 6vw, 80px);
 }
 
 .pillars__grid {
@@ -20,7 +20,7 @@
 
 .pillar {
   position: relative;
-  padding: clamp(34px, 3.4vw, 50px);
+  padding: clamp(28px, 2.6vw, 40px);
   border-radius: 6px;
   min-height: clamp(420px, 50vw, 560px);
   display: flex;
@@ -73,9 +73,9 @@
 }
 
 @media (max-width: 720px) {
-  .pillars { padding: 60px 0; }
+  .pillars { padding: 40px 0; }
   .pillars__title { font-size: clamp(30px, 9vw, 48px); margin-bottom: 36px; padding-inline: 12px; }
-  .pillar { padding: 28px 22px; min-height: 280px; }
+  .pillar { padding: 24px 20px; min-height: 280px; }
   .pillar__name { font-size: 22px; }
   .pillar__body { font-size: 15px; }
 }

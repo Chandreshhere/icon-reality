@@ -1,6 +1,6 @@
 .ctablock {
   position: relative;
-  padding: clamp(120px, 18vw, 220px) 0;
+  padding: clamp(80px, 11vw, 140px) 0;
   background: var(--bg);
   overflow: hidden;
 }

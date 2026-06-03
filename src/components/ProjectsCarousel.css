@@ -10,7 +10,7 @@
   color: #F4F0EA;
   border-radius: 18px;
   overflow: hidden;
-  padding: clamp(70px, 10vw, 130px) 0 clamp(40px, 5vw, 70px);
+  padding: clamp(56px, 7vw, 90px) 0 clamp(36px, 4vw, 56px);
 }
 
 .carousel__head {
@@ -186,7 +186,7 @@
 
 @media (max-width: 720px) {
   .carousel { padding: 8px; }
-  .carousel__shell { border-radius: 14px; padding: 60px 0 32px; }
+  .carousel__shell { border-radius: 14px; padding: 40px 0 32px; }
   .carousel__head { margin-bottom: 32px; }
   .carousel__title { font-size: clamp(30px, 8vw, 44px); padding-inline: 12px; }
   .carousel__lede { font-size: 15px; padding: 0 12px; }

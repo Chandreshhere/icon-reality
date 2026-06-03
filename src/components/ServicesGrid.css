@@ -7,7 +7,7 @@
   position: relative;
   background: #2A2A2C;
   color: #F4F0EA;
-  padding: clamp(100px, 14vw, 180px) 0;
+  padding: clamp(70px, 9vw, 110px) 0;
   border-radius: 18px;
   overflow: hidden;
 }
@@ -215,7 +215,7 @@
 .service-modal__body {
   flex: 1 1 auto;
   min-height: 0;
-  padding: clamp(18px, 2vw, 28px) clamp(22px, 3vw, 44px) clamp(20px, 2.4vw, 32px);
+  padding: clamp(16px, 1.8vw, 24px) clamp(20px, 2.6vw, 36px) clamp(18px, 2vw, 26px);
   display: flex;
   flex-direction: column;
   gap: clamp(12px, 1.4vw, 18px);
@@ -312,7 +312,7 @@
      so the desktop 32s pace feels sluggish */
   .service-modal__track { animation-duration: 14s; }
   .service-modal__stat-row { grid-template-columns: repeat(2, 1fr); }
-  .service-modal__body { padding: 22px 20px 26px; }
+  .service-modal__body { padding: 18px 18px 22px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -349,7 +349,7 @@
 
 @media (max-width: 720px) {
   .services { padding: 8px; }
-  .services__shell { border-radius: 14px; padding: 60px 0; }
+  .services__shell { border-radius: 14px; padding: 40px 0; }
   .services__title { font-size: clamp(30px, 9vw, 48px); padding-inline: 12px; }
   .services__lede { font-size: 15px; padding-inline: 12px; }
   /* breathing room inside each row so the + button never flushes the edge */

@@ -1,21 +1,23 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import Reveal from '../components/Reveal';
 import ProjectsCarousel from '../components/ProjectsCarousel';
 import CompletedProjects from '../components/CompletedProjects';
 import FinalCTA from '../components/FinalCTA';
+import { projectsList } from '../data/projects';
 import './ProjectsPage.css';
 
-const trending = [
-  { name: 'Oscar Palace',      location: 'Hingonia',       size: '64 acres',  plots: '5,000 – 20,000 sq ft', image: '/images/projects/01.jpg' },
-  { name: 'Oscar Fort',        location: 'Bicholi',        size: 'Royal estate', plots: 'Premium villa plots',  image: '/images/projects/02.jpg' },
-  { name: 'Oscar Billionaire', location: 'Bicholi',        size: 'Premium',   plots: 'Limited-edition plots', image: '/images/projects/03.jpg' },
-  { name: 'Saatvik Vihar',     location: 'Manglia',        size: 'Township',  plots: 'Family-first plots',    image: '/images/projects/04.jpg' },
-  { name: 'Siddhayatan',       location: 'Manglia',        size: 'Community', plots: 'Community-first plots', image: '/images/projects/05.jpg' },
-  { name: 'Eden Garden',       location: 'Ambamoliya',     size: 'Plotted',   plots: 'Garden-themed plots',   image: '/images/projects/06.jpg' },
-  { name: 'Labham City',       location: 'Super Corridor', size: 'Township',  plots: 'Connectivity-led',      image: '/images/projects/07.jpg' },
-  { name: 'IIT Greens',        location: 'Bypass',         size: 'Premium',   plots: 'Education corridor',    image: '/images/projects/08.jpg' },
-];
+const trending = projectsList
+  .filter((p) => p.status === 'trending')
+  .map((p) => ({
+    slug: p.slug,
+    name: p.name,
+    location: p.location,
+    size: p.total_area,
+    plots: p.plot_sizes,
+    image: p.thumbnail,
+  }));
 
 export default function ProjectsPage() {
   const lineRefs = useRef([]);
@@ -69,20 +71,22 @@ export default function ProjectsPage() {
         <div className="container">
           <div className="projects-list__grid">
             {trending.map((p, i) => (
-              <Reveal key={p.name} className="projects-list__card" delay={i * 0.04}>
-                <div className="projects-list__media">
-                  <img src={p.image} alt={`${p.name} — ${p.location}`} loading="lazy" />
-                  <span className="projects-list__badge">Trending</span>
-                </div>
-                <div className="projects-list__body">
-                  <h3 className="projects-list__name">{p.name}</h3>
-                  <div className="projects-list__meta">
-                    <span>{p.location}</span>
-                    <span className="projects-list__dot">·</span>
-                    <span>{p.size}</span>
+              <Reveal key={p.slug} delay={i * 0.04}>
+                <Link to={`/projects/${p.slug}`} className="projects-list__card">
+                  <div className="projects-list__media">
+                    <img src={p.image} alt={`${p.name} — ${p.location}`} loading="lazy" />
+                    <span className="projects-list__badge">Trending</span>
                   </div>
-                  <p className="projects-list__plots">{p.plots}</p>
-                </div>
+                  <div className="projects-list__body">
+                    <h3 className="projects-list__name">{p.name}</h3>
+                    <div className="projects-list__meta">
+                      <span>{p.location}</span>
+                      <span className="projects-list__dot">·</span>
+                      <span>{p.size}</span>
+                    </div>
+                    <p className="projects-list__plots">{p.plots}</p>
+                  </div>
+                </Link>
               </Reveal>
             ))}
           </div>

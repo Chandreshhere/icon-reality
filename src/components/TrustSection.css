@@ -1,5 +1,5 @@
 .trust {
-  padding: clamp(80px, 12vw, 160px) 0;
+  padding: clamp(60px, 8vw, 100px) 0;
   background: var(--bg);
 }
 
@@ -61,7 +61,7 @@
 }
 
 @media (max-width: 720px) {
-  .trust { padding: 60px 0; }
+  .trust { padding: 40px 0; }
   .trust__heading { font-size: clamp(28px, 8vw, 40px); margin-bottom: 20px; padding-inline: 12px; }
   .trust__lede { font-size: 15px; margin-bottom: 26px; padding-inline: 12px; }
   .trust__points li { font-size: 15px; padding: 16px 0; }

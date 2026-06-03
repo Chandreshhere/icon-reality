@@ -83,11 +83,11 @@
   .stats__grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 720px) {
-  .stats { padding: 60px 0; }
+  .stats { padding: 40px 0; }
   .stats__heading { font-size: clamp(26px, 8vw, 38px); padding-inline: 12px; }
   .stats__lede { font-size: 15px; padding: 0 12px; }
   /* card-style internal padding to match pillars + testimonials cards */
-  .stats__card { padding: 22px 20px; gap: 8px; }
+  .stats__card { padding: 18px 16px; gap: 8px; }
   .stats__value { font-size: clamp(28px, 9vw, 40px); }
 }
 @media (max-width: 480px) {

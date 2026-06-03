@@ -1,16 +1,16 @@
+import { Link } from 'react-router-dom';
 import Reveal from './Reveal';
+import { projectsList } from '../data/projects';
 import './CompletedProjects.css';
 
-const completed = [
-  { name: 'Glamour Highway City', location: 'Pithampur',       image: '/images/projects/01.jpg' },
-  { name: 'Glamour Hill City',    location: 'Rau',             image: '/images/projects/02.jpg' },
-  { name: 'Ruchi Enclave',        location: 'Jhalaria',        image: '/images/projects/03.jpg' },
-  { name: 'Ruchi Lifescapes',     location: 'Jhalaria',        image: '/images/projects/04.jpg' },
-  { name: 'Singapore Corridor',   location: 'Super Corridor',  image: '/images/projects/05.jpg' },
-  { name: 'Singapore Lifestyle 2',location: 'Super Corridor',  image: '/images/projects/06.jpg' },
-  { name: 'Dream Victoria',       location: 'Super Corridor',  image: '/images/projects/07.jpg' },
-  { name: 'Victoria Park',        location: 'Super Corridor',  image: '/images/projects/08.jpg' },
-];
+const completed = projectsList
+  .filter((p) => p.status === 'completed')
+  .map((p) => ({
+    slug: p.slug,
+    name: p.name,
+    location: p.location,
+    image: p.thumbnail,
+  }));
 
 export default function CompletedProjects() {
   return (
@@ -28,15 +28,17 @@ export default function CompletedProjects() {
       <div className="container">
         <div className="completed__grid">
           {completed.map((p, i) => (
-            <Reveal key={p.name} className="completed__card" delay={i * 0.04}>
-              <div className="completed__media">
-                <img src={p.image} alt={`${p.name} — ${p.location}`} loading="lazy" />
-                <span className="completed__badge">Completed</span>
-              </div>
-              <div className="completed__body">
-                <h3 className="completed__name">{p.name}</h3>
-                <span className="completed__location">{p.location}</span>
-              </div>
+            <Reveal key={p.slug} delay={i * 0.04}>
+              <Link to={`/projects/${p.slug}`} className="completed__card">
+                <div className="completed__media">
+                  <img src={p.image} alt={`${p.name} — ${p.location}`} loading="lazy" />
+                  <span className="completed__badge">Completed</span>
+                </div>
+                <div className="completed__body">
+                  <h3 className="completed__name">{p.name}</h3>
+                  <span className="completed__location">{p.location}</span>
+                </div>
+              </Link>
             </Reveal>
           ))}
         </div>
