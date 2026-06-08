@@ -5,7 +5,7 @@ import './ServicesGrid.css';
 const services = [
   {
     title: 'PLOT LAYOUTS',
-    image: '/images/projects/oscar-palace-gate.jpg',
+    image: '/images/services/plot-layouts.png',
     downloadUrl: '/downloads/oscar-palace-plot-layout.pdf',
     downloadLabel: 'Download Plot Layout',
     body: 'A residential plotted project laid out on royal principles — wide avenues, east and west facing plots, and Vastu-compliant orientations across every block.',
@@ -22,14 +22,14 @@ const services = [
       { k: 'Facing', v: 'East & West' },
     ],
     gallery: [
-      '/images/projects/oscar-palace-gate.jpg',
       '/images/projects/oscar-palace-1.jpg',
+      '/images/projects/oscar-palace-gate.jpg',
       '/images/projects/oscar-palace-3.jpg',
     ],
   },
   {
     title: 'AMENITIES',
-    image: '/images/projects/oscar-palace-4.jpg',
+    image: '/images/services/amenities.png',
     body: 'A 26,000 sq ft grand clubhouse, a temple, baradaris, and 2,80,000 sq ft of garden and open spaces — designed for daily life, not the brochure.',
     body2: 'We design for the hours you actually live in. Morning walks through landscaped gardens, evenings at the clubhouse, children at the play zone, and quiet corners for yoga and meditation — all held inside a secure, heritage-styled estate.',
     highlights: [
@@ -52,7 +52,7 @@ const services = [
   },
   {
     title: 'LOCATION',
-    image: '/images/projects/oscar-palace-1.jpg',
+    image: '/images/services/location.png',
     downloadUrl: '/downloads/oscar-palace-location-plan.pdf',
     downloadLabel: 'Download Location Plan',
     body: 'On the new Indore–Nagpur Highway — a corridor set to reshape the infrastructure and road connectivity of Indore, with the city close and the calm intact.',
@@ -69,14 +69,14 @@ const services = [
       { k: 'Schools nearby', v: '4+ rated' },
     ],
     gallery: [
-      '/images/projects/oscar-palace-1.jpg',
       '/images/projects/oscar-palace-gate.jpg',
+      '/images/projects/oscar-palace-1.jpg',
       '/images/projects/oscar-fort.webp',
     ],
   },
   {
     title: 'INVESTMENT',
-    image: '/images/projects/oscar-palace-3.jpg',
+    image: '/images/services/investment.png',
     body: 'Buy early, hold long-term, watch appreciation — land you own, on a highway corridor with structural reasons to grow. Bank loans are available on every plot.',
     body2: 'Plotted developments in growth corridors have historically outperformed apartments on both appreciation and liquidity. Oscar Palace, on the Indore–Nagpur Highway, is positioned to be one of them.',
     highlights: [
@@ -92,8 +92,8 @@ const services = [
     ],
     gallery: [
       '/images/projects/oscar-palace-3.jpg',
-      '/images/projects/oscar-palace-1.jpg',
       '/images/projects/oscar-palace-gate.jpg',
+      '/images/projects/oscar-palace-1.jpg',
     ],
   },
 ];
